@@ -1,0 +1,98 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles de l'en-tête */
+header {
+    background-color: #000350;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Styles de la section des films */
+.movie-info {
+    padding: 20px;
+}
+
+.movie-info h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.movie-info h2 {
+    font-size: 1.5em;
+    margin: 20px 0 10px;
+}
+
+.movie-info p {
+    margin: 0 0 10px;
+}
+
+/* Styles du pied de page */
+footer {
+    background-color: #000350;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Styles pour les affiches de films */
+.movie-poster-container {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.movie-poster {
+    display: block;
+    width: 300px;
+    height: 450px;
+    transition: transform 0.3s ease-in-out, filter 0.3s;
+}
+
+.movie-poster:hover {
+    transform: scale(1.1);
+    filter: grayscale(90%);
+}
+
+/* Style pour le titre de la catégorie */
+.movie-category {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: transparent;
+    padding: 10px 15px;
+    opacity: 0;
+    transition: opacity 0.3s, color 0.3s;
+    font-size: 1.5em;
+    font-family: Impact, fantasy;
+}
+
+.movie-poster-container:hover .movie-category {
+    opacity: 1;
+    color: #FFD700;
+}

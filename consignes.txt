@@ -1,0 +1,8 @@
+pour mettre fichier latex en html aller dans terminal et 
+PS C:\Users\leofe> cd "C:\Users\leofe\OneDrive\Bravo les humains"
+PS C:\Users\leofe\OneDrive\Bravo les humains> pandoc "Main.tex" -o output.html
+PS C:\Users\leofe\OneDrive\Bravo les humains> pandoc "Main.tex" -o maint.html
+PS C:\Users\leofe\OneDrive\Bravo les humains>
+
+
+Java script permet l'interaction sur une page html ( demander a rentre des infos etc)

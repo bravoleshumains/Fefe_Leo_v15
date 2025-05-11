@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupes-Anneaux-Corps</title>
+    <link rel="stylesheet" href="stylemaths.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="Bravo les humains_Plan de travail 1 copie.png" alt="Agreg-Maths">
+        </a>
+    </div>
+    <h1>Cours Groupes-Anneaux-Corps</h1>
+</header>
+
+<section class="chapter" id="chapitre1">
+    <h3>Chapitre 1: Groupes</h3>
+    <p>Dans ce chapitre, nous introduisons les notions de fonctions holomorphes, de dérivées complexes et de formules de Cauchy.</p>
+    <div class="content">
+        <!-- Contenu du chapitre 1 -->
+        <p>Soit E un ensemble, on appelle une application <span class="math">*</span> de (E,E)<span class="math">→</span>E une loi de composition interne. L’appellation est limpide, c’est une loi qui permet de "mixer" des éléments d’un même ensemble entre eux.</p>
+        <div class="definition">
+            <div class="title">Définition</div>
+            <p>On appelle (G,<span class="math">*</span>) un groupe si G est un ensemble non vide et <span class="math">*</span> est une L.C.I sur G vérifiant les trois propriétés suivantes:</p>
+            <ul>
+                <li><p><span class="math">∀x, y, z ∈ G</span>, <span class="math">x * (y * z) = (x * y) * z</span></p></li>
+                <li><p><span class="math">∃e ∈ G</span>, <span class="math">∀x ∈ G</span>, <span class="math">x * e = e * x = x</span></p></li>
+                <li><p><span class="math">∀x ∈ G</span>, <span class="math">∃x<sup> − 1</sup> ∈ G</span>, <span class="math">x * x<sup> − 1</sup> = x<sup> − 1</sup> * x = e</span></p></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="chapter" id="chapitre2">
+    <h3>Chapitre 2: Anneaux</h3>
+    <p>Ce chapitre traite de l'intégration de fonctions complexes le long de chemins courbes, ainsi que du théorème de Cauchy pour les contours simples.</p>
+    <div class="content">
+        <!-- Contenu du chapitre 2 -->
+        <div class="definition">
+            <div class="title">Définition</div>
+            <p>Soit <span class="math">A</span> et <span class="math">B</span> deux anneaux. Un morphisme <span class="math">f</span> de <span class="math">A</span> vers <span class="math">B</span> est une application <span class="math">f : A → B</span> telle que:</p>
+            <ul>
+                <li><p><span class="math">f(0) = 0</span> et <span class="math">f(1) = 1</span></p></li>
+                <li><p><span class="math">∀a, \Tilde{a} ∈ A</span>, <span class="math">f(a + \Tilde{a}) = f(a) + f(\Tilde{a})</span></p></li>
+                <li><p><span class="math">∀a ∈ A</span>, <span class="math">f( − a) = f(a)</span></p></li>
+                <li><p><span class="math">∀a, \Tilde{a} ∈ A</span>, <span class="math">f(a*\Tilde{a}) = f(a)*f(\Tilde{a})</span></p></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="chapter" id="chapitre3">
+    <h3>Chapitre 3: Corps Finis</h3>
+    <p>Nous explorons les séries de Laurent et leur convergence, ainsi que les résidus et leurs applications.</p>
+    <div class="content">
+        <!-- Contenu du chapitre 3 -->
+        <div class="definition">
+            <div class="title">Définition</div>
+            <p>Un corps <span class="math">(K, +, *)</span> est un anneau dont tout élément non nul est inversible.</p>
+        </div>
+        <p>Exemple: <span class="math">ℚ, ℝ, ℂ</span></p>
+        <div class="definition">
+            <div class="title">Définition</div>
+            <p>Soit <span class="math">(K, +, *)</span> un corps. Une partie <span class="math">(P ⊂ K)</span> est un sous-corps si c’est un sous-anneau tel que <span class="math">∀x ∈ P, x<sup> − 1</sup> ∈ P</span>. On dit aussi que <span class="math">K</span> est une extension de <span class="math">P</span>.</p>
+        </div>
+        <p>Soit <span class="math">A</span> un anneau. Soit <span class="math">n</span> un entier naturel. On peut bien sûr le penser comme <span class="math">1 + 1 + ⋯ + 1</span> (n fois). Mais alors il prend un sens dans <span class="math">A</span>. De plus, si <span class="math">n</span> est négatif, <span class="math">n =  − ( − n)</span>. On obtient ainsi un morphisme d’anneaux :</p>
+        <div class="math display">
+            <p><span class="math">ι : ℤ → A</span></p>
+        </div>
+        <p>Autrement dit, <span class="math">ι(1) = 1</span>, <span class="math">ι(2) = 1 + 1</span>, <span class="math">ι(3) = 1 + 1 + 1</span> etc. Et <span class="math">ι( − 1) =  − ι(1)</span>, <span class="math">ι( − 2) =  − ι(2)</span>, <span class="math">ι( − 3) =  − ι(3)</span> etc. Le noyau de <span class="math">ι</span> est un idéal de <span class="math">A</span>. Il s’écrit donc <span class="math">(n)</span> pour un entier naturel <span class="math">n</span>. L’entier <span class="math">n</span> est appelé la caractéristique de <span class="math">A</span>. On la note <span class="math">car(A)</span>.</p>
+        <div class="proposition">
+            <div class="title">Proposition</div>
+            <p>La caractéristique d’un corps est nulle ou un nombre premier <span class="math">p</span>.</p>
+        </div>
+        <div class="proof">
+            <div class="title">Preuve</div>
+            <p>Comme <span class="math">ℤ/nℤ</span> s’injecte dans le corps il est intègre. Mais alors <span class="math">n</span> est nul ou premier. Soit <span class="math">K</span> un corps. En fait, si <span class="math">car(K) = 0</span> alors <span class="math">K</span> contient <span class="math">

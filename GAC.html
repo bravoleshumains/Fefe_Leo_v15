@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupes-Anneaux-Corps</title>
+    <link rel="stylesheet" href="stylemaths.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="Bravo les humains_Plan de travail 1 copie.png" alt="Agreg-Maths">
+        </a>
+    </div>
+    <h1>Cours Groupes-Anneaux-Corps</h1>
+</header>
+
+<section class="chapter" id="chapitre1">
+    <h3>Chapitre 1: Groupes</h3>
+    <p>Dans ce chapitre, nous introduisons les notions de fonctions holomorphes, de dérivées complexes et de formules de Cauchy.</p>
+    <div class="content">
+        <p>Soit \( E \) un ensemble, on appelle une application \( * \) de \( (E, E) \rightarrow E \) une loi de composition interne. L’appellation est limpide, c’est une loi qui permet de "mixer" des éléments d’un même ensemble entre eux.</p>
+        <div class="definition">
+            <div class="title">Définition</div>
+            <p>On appelle \( (G, *) \) un groupe si \( G \) est un ensemble non vide et \( * \) est une L.C.I sur \( G \) vérifiant les trois propriétés suivantes:</p>
+            <ul>
+                <li>\(\forall x, y, z \in G, \; x * (y * z) = (x * y) * z\)</li>
+                <li>\(\exists e \in G, \; \forall x \in G, \; x * e = e * x = x\)</li>
+                <li>\(\forall x \in G, \; \exists x^{-1} \in G, \; x * x^{-1} = x^{-1} * x = e\)</li>
+            </ul>
+        </div>
+        <div class="theorem">
+            <div class="title">Théorème de Lagrange</div>
+            <p>Soit \( H \) un sous-groupe d'un groupe fini \( (G, *) \).<br>Alors l'ordre de \( H \) divise l'ordre de \( G \).</p>
+            <button type="button" onclick="showProof('proof1')">Voir la preuve</button>
+            <div id="proof1" class="proof" style="display:none;">
+                <div class="title">Preuve</div>
+                <p>La preuve repose sur la décomposition de \( G \) en classes latérales par rapport à \( H \), ce qui permet de montrer que l'ordre de \( H \) divise celui de \( G \).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="chapter" id="chapitre2">
+    <h3>Chapitre 2: Anneaux</h3>
+    <p>Ce chapitre traite de l'intégration de fonctions complexes le long de chemins courbes, ainsi que du théorème de Cauchy pour les contours simples.</p>
+    <div class="content">
+        <!-- Contenu du chapitre 2 -->
+        <div class="definition">
+            <div class="title">Définition</div>
+            <p>Soit \( A \) et \( B \) deux anneaux. Un morphisme \( f \) de \( A \) vers \( B \) est une application \( f : A \rightarrow B \) telle que:</p>
+            <ul>
+                <li>\( f(0) = 0 \) et \( f(1) = 1 \)</li>
+                <li>\( \forall a, \tilde{a} \in A, \; f(a + \tilde{a}) = f(a) + f(\tilde{a}) \)</li>
+                <li>\( \forall a \in A, \; f(-a) = f(a) \)</li>
+                <li>\( \forall a, \tilde{a} \in A, \; f(a * \tilde{a}) = f(a) * f(\tilde{a}) \)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="chapter" id="chapitre3">
+    <h3>Chapitre 3: Corps Finis</h3>
+    <p>Nous explorons les séries de Laurent et leur convergence, ainsi que les résidus et leurs applications.</p>
+    <div class="content">
+        <div class="definition">
+            <div class="title">Définition</div>
+            <p>Un corps \( (K, +, *) \) est un anneau dont tout élément non nul est inversible.</p>
+        </div>
+        <p>Exemple: \( \mathbb{Q}, \mathbb{R}, \mathbb{C} \)</p>
+        <div class="definition">
+            <div class="title">Définition</div>
+            <p>Soit \( (K, +, *) \) un corps. Une partie \( (P \subset K) \) est un sous-corps si c’est un sous-anneau tel que \( \forall x \in P, \; x^{-1} \in P \). On dit aussi que \( K \) est une extension de \( P \).</p>
+        </div>
+        <div class="proposition">
+            <div class="title">Proposition</div>
+            <p>La caractéristique d’un corps est nulle ou un nombre premier \( p \).</p>
+            <button type="button" onclick="showProof('proof2')">Voir la preuve</button>
+            <div id="proof2" class="proof" style="display:none;">
+                <div class="title">Preuve</div>
+                <p>Comme \( \mathbb{Z}/n\mathbb{Z} \) s’injecte dans le corps, il est intègre. Par conséquent, \( n \) est nul ou premier. Soit \( K \) un corps. Si \( \text{car}(K) = 0 \), alors \( K \) contient \( \mathbb{Q} \). Si \( \text{car}(K) = p \), alors \( K \) contient \( \mathbb{Z}/p\mathbb{Z} \).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="exercises">
+    <h2>Exercices1</h2>
+    <iframe src="exo.html" width="100%" height="400"></iframe>
+
+    <h2>Exercices2</h2>
+    <iframe src="exo2.html" width="100%" height="400"></iframe>
+</section>
+
+<footer>
+    <p>&copy; 2024 BravoLesHumains. Tous droits réservés.</p>
+</footer>
+
+<script>
+    function showProof(proofId) {
+        var proof = document.getElementById(proofId);
+        if (proof.style.display === "none") {
+            proof.style.display = "block";
+        } else {
+            proof.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

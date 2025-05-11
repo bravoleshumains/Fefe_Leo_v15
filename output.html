@@ -1,0 +1,14 @@
+<p>Leçon 203 - Utilisation de la notion de compacité.<br />
+iLeçon 924 - Théories et modèles en logique du premier ordre. Exemples.</p>
+<h1 id="préliminaires">Préliminaires</h1>
+<h1 id="filtres-et-ultrafiltres">Filtres et Ultrafiltres</h1>
+<p>Soit E un ensemble non vide, alors <span class="math inline"><em>F</em> ⊆ <em>P</em>(<em>E</em>)</span> est un filtre sur E si:<br />
+- <span class="math inline">∀<em>A</em> ∈ <em>F</em>, <em>A</em> ⊆ <em>B</em> ⊆ <em>E</em> ⇒ <em>B</em> ∈ <em>F</em></span><br />
+- <span class="math inline"><em>A</em>, <em>B</em> ∈ <em>F</em> ⇒ <em>A</em> ∩ <em>B</em> ∈ <em>F</em></span><br />
+- <span class="math inline">∅ ∉ <em>F</em></span></p>
+<p>Un exemple de filtre sur <span class="math inline">ℕ</span> serait <span class="math inline">{<em>A</em> ⊆ ℕ, ∀<em>n</em> ∈ ℕ, {<em>m</em> ∈ ℕ, <em>m</em> ≥ <em>n</em>} ⊆ <em>A</em>}</span><br />
+</p>
+<h1 id="preuve-du-théorème-de-compacité">Preuve du théorème de Compacité</h1>
+<p>Soient <span class="math inline"><em>ϕ</em>(<em>x</em><sub>1</sub>, …, <em>x</em><sub><em>n</em></sub>)</span> une formule sur <span class="math inline">ℒ</span> et <span class="math inline"><em>m</em><sup>*</sup></span>=([<span class="math inline"><em>m</em><sub><em>i</em></sub><sup>1</sup></span>]),<span class="math inline">…</span>,[<span class="math inline"><em>m</em><sub><em>i</em></sub><sup><em>n</em></sup></span>]) un éléments de <span class="math inline">(<em>M</em><sup>*</sup>)<sup><em>n</em></sup></span>.<br />
+Alors <span class="math inline"><em>M</em><sup>*</sup></span><span class="math inline">⊨</span><span class="math inline"><em>ϕ</em>(<em>m</em><sup>*</sup>)</span> <span class="math inline">⇔</span> <span class="math inline">{</span>i <span class="math inline"> ∈ <em>I</em></span> : <span class="math inline"><em>M</em><sub><em>i</em></sub></span> <span class="math inline">⊨</span> <span class="math inline"><em>ϕ</em></span>(<span class="math inline"><em>m</em><sub><em>i</em></sub><sup>1</sup></span>,<span class="math inline">…</span>,<span class="math inline"><em>m</em><sub><em>i</em></sub><sup><em>n</em></sup></span>)}<span class="math inline">∈</span> U</p>
+<p>Par induction sur <span class="math inline"><em>ϕ</em></span>.</p>

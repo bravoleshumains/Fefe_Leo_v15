@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Développements</title>
+    <style>
+        /* Styles CSS de base */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        .developpement-contenu {
+            display: none; /* Masquer par défaut */
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .developpement-contenu:target {
+            display: block; /* Afficher lorsqu'il est ciblé */
+        }
+    </style>
+    <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Développements</h1>
+    </header>
+    <main>
+        <section>
+            <h2><a href="#bell">Nombre de Bell</a></h2>
+            <div id="bell" class="developpement-contenu">
+                <p>Soit \(n \in \mathbf{N^*}\), on note \(B_n\) le nombre de partitions de \(\llbracket 1~;~ n \rrbracket\) (\(B_0 = 1\)).</p>
+                <p>\[ B_n= \frac{1}{e}\sum_{k=0}^{\infty}\frac{k^n}{k!} \]</p>
+            </div>
+        </section>
+
+        <section>
+            <h2><a href="#archimede">Méthode Archimédienne pour approcher Pi</a></h2>
+            <div id="archimede" class="developpement-contenu">
+                <p>Le contenu de ce développement n'est pas fourni dans le document LaTeX. Veuillez l'ajouter.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2><a href="#projection">Projection sur un Concave Fermé</a></h2>
+            <div id="projection" class="developpement-contenu">
+                <p>Leçons 203, 209, 213, 229, 253, 219 :</p>
+                <p>Soit \(f : [0, 1] \rightarrow \mathbb{R}\), continue, \(C^1\), concave, et soit</p>
+                <p>\[ \Gamma_S(f): [0, 1] \to \mathbb{R} \times \mathbb{R} \quad x \mapsto (x, g_s(x_1)) \]</p>
+                <p>où \(S\) est une subdivision de \([0,1]\), \(x_0 = 0 < x_1 < \dots < x_n = 1\), et <span class="math-inline">g\_S</span> une fonction telle que <span class="math-inline">g\_s\(x\)</span> est affine sur <span class="math-inline">\[x\_i, x\_\{i\+1\}\] \\forall i \\in \[0,n\-1\]</span> et <span class="math-inline">\\forall i \\in \[0,n\]</span> vaut <span class="math-inline">f\(x\_i\)</span> en <span class="math-inline">x\_i</span>.</p>
+                <p>Ainsi, si l'on a un chemin \(\gamma\) au-dessus de \(f\) et joignant les deux extrémités de \(f\), on a :</p>
+                <p>\[ l(\gamma) \leq l(\Gamma_S(f)) \]</p>
+                <p>avec <span class="math-inline">l</span> la longueur de l'arc.</p>
+                <p><strong>Lemme</strong> : Soit \(H\) un espace de Hilbert et \(C\) un convexe fermé de \(H\). On définit \(\rho(x) = d(x, C)\), \(\rho_C(x) = \inf_{z \in C} \|x - z\| = y\).</p>
+                <ul>
+                    <li>Existence et unicité (admis).</li>
+                    <li>\(\forall z \in C, \quad \langle y - x, y - z \rangle \leq 0\).</li>
+                    <li>\(\rho_C(x)\) est 1-lipschitzienne.</li>
+                </ul>
+                <p><strong>Preuve</strong> :</p>
+                <p>Soit \(x, y \in C\), alors par convexité de \(C\), on a que \(\forall \lambda \in [0, 1]\), \((1-\lambda) x + \lambda y \in C\). Donc :</p>
+                <p>\[ \|x - y\|^2 \leq \|x - y\|^2 + \lambda (\beta - g) \leq 0 \quad \forall \lambda \in [0, 1] \]</p>
+                <p>donc :</p>
+                <p>\[ 0 \leq \langle x - y, x - z \rangle^2 - 2\lambda \langle x - y, x - z \rangle \implies \dots \]</p>
+                <p>Si \(x, y \in H\) et \(\gamma\), leur projeté orthogonal sur \(C\), on a donc :</p>
+                <p>\[ \langle y - x, y - z \rangle \leq 0 \quad et \quad \langle y - x, y - z \rangle \leq 0 \]</p>
+                <p>En sommant :</p>
+                <p>\[ \langle y - y, y - x \rangle^2 \leq 0 \Rightarrow \|y - y\|^2 \leq \langle y - y, x^* - x^* \rangle \]</p>
+                <p>D'après Cauchy-Schwartz, on a :</p>
+                <p>\[ \|y - y^*\|^2 \leq \|x - x^*\| \|y - y^*\| \Rightarrow \|y - y^*\| \leq \|x - x^*\| \]</p>
+                <p>Montrons que \(g_s(x)\) est encore concave comme cela. \(L = \{x_1, y \in \mathbb{R}^2 / y \leq \beta(x)\}\) est convexe fermé, et on pourra appliquer les théorèmes précédents. Par concavité de \(\beta\), on a que :</p>
+                <p>\[ \forall t \in [0, N - 1], \quad \frac{\beta(x_i) + t\beta(x_{i+1})}{x_{i+1} - x_i} \leq g(x_i) + t \beta(x_{i+1}) \leq \frac{\beta(x_{i+1}) - \beta(x_i)}{x_{i+1} - x_i} \]</p>
+            </div>
+        </section>
+
+        <section>
+            <h2><a href="#sophie-germain">Théorème de Sophie Germain</a></h2>
+            <div id="sophie-germain" class="developpement-contenu">
+                <p>Soit \(p \in \mathbf{P}\) tel que \(q =2p +1 \in \mathbf{P}\). Alors il n'existe pas de triplet \((x,y,z)\in \mathbf{Z}^3\) tel que \[x^p +y^p +z^p =0 \text{ et que } xyz\not \equiv 0 [p]\]</p>
+            </div>
+        </section>
+
+        <section>
+            <h2><a href="#lame">Théorème de Lamé</a></h2>
+            <div id="lame" class="developpement-contenu">
+                <p><strong>Théorème</strong> : Soit \(a,b \in \mathbf{N}^*\) tels que \(1 \leq b < a\) alors le nombre d'opérations nécessaire dans l'algorithme d'Euclide pour trouver \(pgcd(a,b)\) est inférieur ou égal à 5 fois le nombre de chiffres dans l'écriture en base décimale de \(b\).</p>
+            </div>
+        </section>
+
+        <section>
+            <h2><a href="#newton">Méthode de Newton</a></h2>
+            <div id="newton" class="developpement-contenu">
+                <p>Soit \(f : [c, d] \rightarrow \mathbb{R}\

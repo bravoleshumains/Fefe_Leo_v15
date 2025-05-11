@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vérification de réponses</title>
+    <link rel="stylesheet" type="text/css" href="styletest.css">
+</head>
+<body>
+
+<h2>Questionnaire</h2>
+<form id="quizForm">
+    <label for="answer">Marie est ma Bff for ever de ever:</label>
+    <input type="text" id="answer" name="answer">
+    <button type="button" onclick="checkAnswer()">Vérifier</button>
+</form>
+
+<div id="result"></div>
+
+<!-- Bouton pour afficher la correction -->
+<button type="button" onclick="showCorrection()">Correction</button>
+
+<!-- Page cachée de correction -->
+<div id="correction" style="display: none;">
+    <h3>Correction :</h3>
+    <p>Completement vrai</p>
+</div>
+
+<script>
+    function checkAnswer() {
+        var userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+        var correctAnswer = "vrai"; // Changer cette valeur par la réponse correcte
+
+        if (userAnswer === correctAnswer) {
+            document.getElementById("result").innerHTML = "Bonne réponse!";
+        } else {
+            document.getElementById("result").innerHTML = "Mauvaise réponse!";
+        }
+    }
+
+    function showCorrection() {
+        document.getElementById("correction").style.display = "block";
+    }
+
+    document.getElementById("answer").addEventListener("keydown", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            checkAnswer();
+        }
+    });
+</script>
+
+</body>
+</html>
+
