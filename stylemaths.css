@@ -1,0 +1,190 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles de l'en-tête */
+header {
+    background-color: #000350;
+    color: #fff; /* Changer la couleur du texte en blanc */
+    padding: 40px 0; /* Augmenter la hauteur de l'en-tête */
+    display: flex;
+    justify-content: center; /* Centrer le contenu horizontalement */
+    align-items: center;
+    position: relative; /* Pour permettre un positionnement absolu */
+}
+
+.logo img {
+    width: 120px;
+    position: absolute;
+    left: 20px; /* Positionner le logo à gauche */
+    top: 50%; /* Centrer verticalement */
+    transform: translateY(-50%); /* Centrer verticalement */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em; /* Un peu stylisé */
+    text-align: center;
+    font-family: 'Georgia', serif; /* Ajouter une police stylisée */
+}
+
+/* Styles de l'en-tête de navigation */
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Styles de la section de héros */
+.hero {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    color: #000000;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000350;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #000350;
+}
+
+/* Styles de la section des cours en vedette */
+.featured-courses {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.featured-courses h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.course {
+    display: inline-block;
+    width: 300px;
+    margin: 0 20px;
+    text-align: left;
+}
+
+.course img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.course h3 {
+    margin-top: 10px;
+}
+
+.course p {
+    margin-top: 10px;
+}
+
+/* Styles des chapitres */
+.chapter h3 {
+    text-align: center; /* Centrer les titres des chapitres */
+    font-size: 1.5em; /* Taille de police un peu plus grande pour le titre des chapitres */
+    margin-top: 20px;
+}
+
+.chapter p {
+    text-align: center; /* Centrer les paragraphes des chapitres */
+    font-size: 1.2em;
+    margin: 20px;
+}
+
+/* Styles du pied de page */
+footer {
+    background-color: #000350;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/* Styles des cases de définitions, propositions, théorèmes */
+.definition, .proposition, .theorem, .proof {
+    border: 2px solid #666; /* Bordure */
+    border-radius: 10px; /* Bords arrondis */
+    padding: 20px; /* Padding pour l'intérieur de la case */
+    margin: 20px; /* Espace autour de la case */
+}
+
+.definition .title, .proposition .title, .theorem .title, .proof .title {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 10px; /* Espace en dessous du titre */
+}
+
+/* Couleurs pour différencier les types de cases */
+.definition {
+    background-color: #ddffdd; /* Vert clair */
+}
+
+.proposition {
+    background-color: #ffdddd; /* Rouge clair */
+}
+
+.theorem {
+    background-color: #ffcc99; /* Orange foncée */
+}
+
+.proof {
+    background-color: #ddddff; /* Bleu clair */
+}
+
+/* Ajuster les marges et paddings pour remplir la case */
+.definition p, .proposition p, .theorem p, .proof p {
+    margin: 10px 0; /* Réduire les marges pour remplir la case */
+    padding: 0;
+    line-height: 1.5; /* Hauteur de ligne pour un meilleur espacement */
+}
+
+
+/* Styles des chapitres */
+.chapter h3 {
+    text-align: center; /* Centrer les titres des chapitres */
+    font-size: 2.5em; /* Taille de police plus grande pour le titre des chapitres */
+    margin-top: 30px;
+    font-family: 'Cambria Math', 'DejaVu Math TeX Gyre', serif; /* Police de type mathématique */
+    color: #333366; /* Couleur stylisée */
+}
+
+.chapter p {
+    text-align: center; /* Centrer les paragraphes des chapitres */
+    font-size: 1.2em;
+    margin: 20px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BravoLesHumains</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style pour la bannière en haut */
+        .banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: none;
+            text-align: center;
+        }
+
+        /* Style pour le bouton de fermeture */
+        .banner .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #aaa;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Liste de messages
+            const messages = [
+                "Message 1 : Passez une bonne journée!",
+                "Message 2 : Travaillez dur, réussissez!",
+                "Message 3 : N'abandonnez jamais!",
+                "Message 4 : Croyez en vous!",
+                "Message 5 : Faites de votre mieux!"
+            ];
+
+            // Fonction pour obtenir la semaine actuelle en format 'YYYY-WW'
+            function getCurrentWeek() {
+                const now = new Date();
+                const startOfYear = new Date(now.getFullYear(), 0, 1);
+                const pastDaysOfYear = (now - startOfYear) / 86400000;
+                const currentWeekNumber = Math.ceil((pastDaysOfYear + startOfYear.getDay() + 1) / 7);
+                return `${now.getFullYear()}-${currentWeekNumber}`;
+            }
+
+            // Fonction pour sélectionner un message aléatoire
+            function getRandomMessage() {
+                return messages[Math.floor(Math.random() * messages.length)];
+            }
+
+            // Vérifier la semaine actuelle et stocker le message si nécessaire
+            const currentWeek = getCurrentWeek();
+            const storedWeek = localStorage.getItem('week');
+            let message;
+
+            if (storedWeek === currentWeek) {
+                message = localStorage.getItem('weeklyMessage');
+            } else {
+                message = getRandomMessage();
+                localStorage.setItem('week', currentWeek);
+                localStorage.setItem('weeklyMessage', message);
+            }
+
+            // Afficher le message dans la bannière
+            document.getElementById('banner-message').innerText = message;
+            document.getElementById('banner').style.display = 'block';
+
+            // Fermer la bannière lorsque l'utilisateur clique sur le bouton de fermeture
+            document.getElementById('close-btn').addEventListener('click', function() {
+                document.getElementById('banner').style.display = 'none';
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="banner" class="banner">
+        <span id="banner-message">Votre message apparaîtra ici</span>
+        <span id="close-btn" class="close-btn">&times;</span>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="Bravo les humains_Plan de travail 1 copie.png" alt="Logo">
+        </div>
+        <h1>Bravo Les Humains</h1>
+    </header>
+    <nav>
+        <div class="menu">
+            <div class="category">
+                <a href="page1.html">Mathématiques</a>
+            </div>
+            <div class="category">
+                <a href="page2.html">Manga</a>
+            </div>
+            <div class="category">
+                <a href="page3.html">Cinéma</a>
+            </div>
+            <div class="category">
+                <a href="page4.html">Humanité</a>
+            </div>
+            <div class="category">
+                <a href="page5.html">Musique</a>
+            </div>
+            <div class="category">
+                <a href="page6.html">Gaming</a>
+            </div>
+        </div>
+    </nav>
+    <p>Bienvenue Sur Bravo Les Humains</p>
+    <footer>
+        <p>&copy; 2024 BravoLesHumains</p>
+    </footer>
+</body>
+</html>

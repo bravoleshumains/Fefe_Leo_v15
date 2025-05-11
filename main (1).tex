@@ -1,0 +1,297 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[french]{babel}
+
+% Set page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usepackage{amsmath}
+\addto\captionsfrench{\def\proofname{Preuve}}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[thmmarks]{ntheorem}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+
+% Environnements avec compteur unique
+\newmdtheoremenv[
+  backgroundcolor=green!10,
+  linecolor=green!70!black,
+  linewidth=2pt,
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  leftmargin=0pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{definition}{Définition}
+
+\newmdtheoremenv[
+  backgroundcolor=red!10,
+  linecolor=red!70!black,
+  linewidth=2pt,
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  leftmargin=0pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{proposition}{Proposition}
+
+\newmdtheoremenv[
+  backgroundcolor=orange!30,
+  linecolor=orange!80!black,
+  linewidth=2pt,
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  leftmargin=0pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{theorem}{Théorème}
+
+\newmdtheoremenv[
+  backgroundcolor=orange!10,
+  linecolor=orange!70!black,
+  linewidth=2pt,
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  leftmargin=0pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{corollary}{Corollaire}
+
+\newmdtheoremenv[
+  backgroundcolor=blue!10,
+  linecolor=blue!70!black,
+  linewidth=2pt,
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  leftmargin=0pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{methode}{Méthode}
+
+% Lemme avec compteur unique
+\newmdtheoremenv[
+  backgroundcolor=yellow!10,
+  linecolor=yellow!70!black,
+  linewidth=2pt,
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  leftmargin=0pt,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=6pt,
+  innerbottommargin=6pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{lemma}{Lemme}
+
+\newtheorem{Proof}{Preuve}
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage{stmaryrd}
+\title{Cours Raphael}
+\author{Léo ferrand}
+\date{February 2023}
+\begin{document}
+
+\maketitle
+
+\section{Calcul Formel}
+Cette leçon porte sur une chose essentielle pour la suite du cursus, la capacité à manipuler les expressions.
+
+Il y a 3 formules PRIMORDIALES à connaitre par coeur ou à savoir redémontrer la première étant:
+\[ (a+b)^2 = a^2 +2ab +b^2\]
+
+Elle se trouve en développant l'expression $(a+b)(a+b)$ ou bien en faisant un dessin, mettre au carré signifie littéralement calculer l'aire du carré de coté $a + b$. Moyen mémo-technique : La surface est en mètre carré.
+\begin{center}
+\begin{tikzpicture}
+    % Définition des dimensions
+    \def\a{3}    % Longueur a
+    \def\b{1.5}  % Longueur b
+
+    % Carré principal (a + b)²
+    \draw (0,0) rectangle (\a+\b,\a+\b);
+    
+    % Division des régions
+    \draw (\a,0) -- (\a,\a+\b);    % Ligne verticale
+    \draw (0,\b) -- (\a+\b,\b);    % Ligne horizontale
+
+    % Coloration des régions
+    \fill[yellow] (0,\b) rectangle (\a,\a+\b);        % Carré a² (en haut à gauche)
+    \fill[blue]   (\a,\b) rectangle (\a+\b,\a+\b);    % Rectangle ab (en haut à droite)
+    \fill[blue]   (0,0) rectangle (\a,\b);            % Rectangle b·ab (en bas à gauche)
+    \fill[green]  (\a,0) rectangle (\a+\b,\b);        % Carré b² (en bas à droite)
+
+    % Étiquettes des surfaces
+    \node at (0.5*\a, 0.5*\b + 0.5*\a + \b) {\huge $a^2$};       % Carré a²
+    \node at (\a + 0.5*\b, 0.5*\a + \b)     {\huge $ab$};        % Rectangle ab
+    \node at (0.5*\a, 0.5*\b)               {\huge $ba$};% Rectangle ba
+    \node at (\a + 0.5*\b, 0.5*\b)          {\huge $b^2$};       % Carré b²
+
+    % Étiquettes des dimensions
+    \node[left] at (-0.2, 0.5*\a + \b) {\huge $a$};            % Côté gauche (a)
+    \node[left] at (-0.2, 0.5*\b)      {\huge $b$};            % Côté gauche (b)
+    \node[above] at (0.5*\a, \a+\b+0.3)    {\huge $a$};        % Côté supérieur (a)
+    \node[above] at (\a + 0.5*\b, \a+\b+0.3) {\huge $b$};      % Côté supérieur (b)
+
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+
+
+
+Essaye de trouver grâce à une des précédentes méthodes de ton choix, l'expression développée de:
+\begin{itemize}
+    \item $(a-b)^2$
+    \item  $ a^2-b^2 $
+    \item $(a+b)^3$ \textit{indice: un volume se mesure en mètre cube}
+\end{itemize}
+
+\subsection{Exercices de développement}
+Grâce à ces formules, développe les expressions suivantes:
+
+\[
+\textbf{a) } (1-5x)(1+5x) \qquad 
+\textbf{b) } 10(5x+1)^2 \qquad 
+\textbf{c) } (25x-25x)^2\qquad
+\textbf{d) } (x-a)(x-b)(x-c)\dots(x-y)(x-z)
+\]
+
+\subsection{Exercices de factorisation}
+
+Factorise les expressions suivantes:
+\[
+\textbf{a) } x^2 -6x+9\qquad 
+\textbf{b) } 2x^2 + 2\sqrt{2}x + 1\qquad 
+\textbf{c) } 9x^2-4\qquad
+\textbf{d) } (3x-1)^2
+ - (2x-3)^2 - (x+2)(x-5)
+\]
+
+\section{Fonctions}
+\begin{definition}
+   Une fonction 
+ permet d'associer à un nombre $x$ 
+, un nombre unique transformé que l'on note $f(x)$.
+\end{definition}
+
+Si l'on note $y= f(x)$, on dit que $x$ est l'antécédent de $y$ (anté = avant donc antécédent est le nombre qu'était $y$ avant l'intervention de $f$).\\
+$y$ lui est l'image de $x$ par $f$ (un miroir nous donne notre image).\\
+
+Il existe plusieurs méthodes pour trouver l'image ou l'antécédent d'un nombre par rapport  à un fonction donnée.
+
+\begin{itemize}
+    \item le tableau:
+   \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \( x \) & -2 & -1 & 0 & 1 & 2 \\ 
+        \hline
+        \( f(x) = 2x \) & -4 & -2 & 0 & 2 & 4 \\ 
+        \hline
+    \end{tabular}\\
+\end{center}
+    \item le graphique: où on trace les points ($x$,$f(x)$)
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines=middle, % Axes centrés sur l'origine
+            enlargelimits=true, % Ajuste les limites pour que la courbe soit bien visible
+            xlabel={$x$}, % Label de l'axe x
+            ylabel={$f(x)$}, % Label de l'axe y
+            xtick={-2,-1,0,1,2}, % Graduations en x
+            ytick={-4,-2,0,2,4}, % Graduations en y
+            samples=100, % Nombre de points pour tracer la courbe
+            domain=-2:2, % Domaine de définition de la courbe
+        ]
+        \addplot[blue, thick] {2*x}; % Tracé de la fonction f(x) = 2x en bleu et épais
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\end{itemize}
+
+\section{EXERCICE FINAL}
+On considère deux fonctions \( f \) et \( g \) définies par :
+
+\[
+f(x) = x^2 - x - 6 \quad \text{et} \quad g(x) = -2x.
+\]
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Montrer que l’image de 5 par la fonction \( f \) est 14.
+        \item Déterminer l’antécédent de 4 par la fonction \( g \).
+    \end{enumerate}
+    
+    Pour calculer des images de nombres par les fonctions \( f \) et \( g \), on utilise un tableur et on obtient la copie d’écran suivante :
+
+    \[
+    \begin{array}{|c|c|c|c|c|c|c|c|c|}
+    \hline
+     & A & B & C & D & E & F & G & H \\
+    \hline
+    1 & x & -4 & -3 & -2 & -1 & 0 & 1 & 2 \\
+    \hline
+    2 & f(x) = x^2 - x - 6 & 14 & 6 & 0 & -4 & -6 & -6 & -4 \\
+    \hline
+    3 & g(x) = -2x & 8 & 6 & 4 & 2 & 0 & -2 & -4 \\
+    \hline
+    \end{array}
+    \]
+
+    \begin{enumerate}
+        \setcounter{enumii}{2}
+        \item À l’aide des informations précédentes, citer deux antécédents de 14 par la fonction \( f \).
+        \item Existe-t-il un nombre qui a la même image par la fonction \( f \) et par la fonction \( g \) ?
+    \end{enumerate}
+\end{enumerate}
+\begin{enumerate}
+    \setcounter{enumi}{1}
+    \item 
+    \begin{enumerate}
+        \item Montrer que, pour tout nombre \( x \), \( f(x) \) est égal à \( (x+2)(x-3) \).
+        \item Résoudre l’équation \( f(x) = 0 \).
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

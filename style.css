@@ -1,0 +1,108 @@
+/* Réinitialisation des marges et des rembourrages */
+body, h1, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style du corps */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Style de l'en-tête */
+header {
+    background-color: #000350;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex; /* Utilisation de flexbox */
+    justify-content: space-between; /* Alignement à l'extrémité gauche et droite */
+    align-items: center; /* Centre verticalement */
+}
+
+/* Style du titre */
+h1 {
+    margin: 0; /* Supprimer le centrage */
+    position: relative;
+    left: -540px; /* Ajustez cette valeur pour décaler légèrement vers la gauche */
+    font-family: 'Patrick Hand', sans-serif; /* Police type écolier */
+    font-size: 3em; /* Taille de la police */
+    text-align: left; /* Aligner le texte à gauche */
+}
+
+    
+  
+
+/* Style de la balise logo */
+.logo {
+    margin-right: 20px; /* Ajouter une marge à droite pour l'espace */
+}
+
+/* Style du logo */
+.logo img {
+    width: 150px; /* Ajustez la taille du logo selon vos besoins */
+}
+
+.menu {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    margin-top: -60px; /* Ajustez la valeur selon vos besoins */
+}
+
+
+/* Style des catégories */
+.category {
+    background-color: #eceeff; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    padding: 20px; /* Espace intérieur */
+    border-radius: 10px; /* Bord arrondi */
+    transition: all 0.3s ease; /* Transition pour l'agrandissement */
+    margin: 0 10px; /* Marge entre les catégories */
+}
+
+/* Change la couleur du texte lorsque survolé */
+.category a:hover {
+    color: #534caf;
+}
+
+/* Agrandissement au survol */
+.category:hover {
+    transform: scale(1.1); /* Agrandissement de 10% */
+    cursor: pointer;
+}
+
+/* Style de la liste des travaux */
+nav ul {
+    list-style-type: none;
+}
+
+/* Style des éléments de liste dans la barre de navigation */
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Style des liens dans la barre de navigation */
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Style des liens au survol */
+nav ul li a:hover {
+    color: #666;
+}
+
+/* Style du pied de page */
+footer {
+    background-color: #000350;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
